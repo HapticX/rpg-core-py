@@ -1,0 +1,13 @@
+# IDE
+.vs/
+.vs-code/
+.idea/
+
+# Cache
+__pycache__/
+*.pyc
+*.pyd
+
+# Log
+*.log
+*.lg
