@@ -8,6 +8,10 @@ __pycache__/
 *.pyc
 *.pyd
 
+# HapDoc docs
+buildocs/
+docs/
+
 # Log
 *.log
 *.lg
