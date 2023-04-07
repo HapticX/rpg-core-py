@@ -33,7 +33,7 @@ jobs:
 
       - name: Build documentation
         run: |
-          hapdoc build rpg_core --accent #6A5ACD --light-accent #240935 --root /rpg-core-py/rpg_core --doc-version 0.0.1 --title RPG-core
+          hapdoc build rpg_core --accent "#6A5ACD" --light-accent "#240935" --template default --root /rpg-core-py/rpg_core --doc-version 0.0.1 --title RPG-core
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
