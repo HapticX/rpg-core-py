@@ -32,9 +32,9 @@ class Enemy:
         """
         if not other.can_dmg:
             return False
-        if (taken_damage := other.take_damage(self.damage)) > 0:
+        if (taken_damage := other.take_damage(self.damage)) <= 0:
             return False
-        if self._on_hit:
+        if self._on_hit is not None:
             self._on_hit(taken_damage)
         return True
 
@@ -45,9 +45,12 @@ class Enemy:
         """
         damage = self._calculate_damage(damage)
         self.current_health -= damage
-        if self._on_take_dmg:
+        if self._on_take_dmg is not None:
             self._on_take_dmg(damage)
         return damage
+
+    def on_hit(self, func):
+        self._on_hit = func
 
     def _default_calculate_damage(self, damage: int) -> int:
         """
@@ -57,3 +60,9 @@ class Enemy:
         :returns: calculated damage
         """
         return max(damage - self.defence, 0)
+
+    def __str__(self) -> str:
+        return (
+            f'<{self.__class__.__name__}>(hp: {self.current_health}/{self.max_health}, '
+            f'canDmg: {self.can_dmg}, dmg: {self.damage}, def: {self.defence})'
+        )
