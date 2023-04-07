@@ -1,0 +1,42 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '.github/ISSUE_TEMPLATE/*'
+      - '*.md'
+      - '.gitignore'
+      - 'LICENSE'
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -U hapdoc
+
+      - name: Build documentation
+        run: |
+          hapdoc build rpg_core --accent #6A5ACD --light-accent #240935 --root /rpg-core-py/rpg_core --doc-version 0.0.1 --title RPG-core
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./buildocs
