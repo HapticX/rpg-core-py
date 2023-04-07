@@ -50,6 +50,11 @@ class Enemy:
         return damage
 
     def on_hit(self, func):
+        """
+        Bind callback function for `hit` method
+
+        :param func: Function with `int` argument.
+        """
         self._on_hit = func
 
     def _default_calculate_damage(self, damage: int) -> int:
