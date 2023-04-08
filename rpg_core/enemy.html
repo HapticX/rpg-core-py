@@ -152,16 +152,16 @@
       <div class="w-full h-full pt-20 flex px-12 xl:px-32 gap-20">
         <!-- Page data -->
         <div class="flex flex-col gap-4 w-full xl:w-3/4">
-          <h1 class="titleRef" id="b6debb4e0085ba72">enemy</h1><p>
+          <h1 class="titleRef" id="bc06aa7cb87cb531">enemy</h1><p>
 
 Provides Enemy class for interact with objects and other enemies
-</p><h2 class="titleRef" id="2e74c9a0727d5f7f">Classes</h2><p>
+</p><h2 class="titleRef" id="60f0e7b8e4a619e8">Classes</h2><p>
 
-</p><h3 class="titleRef" id="2ba9488cd12d8094"><code class="command">Enemy</code></h3><p>
+</p><h3 class="titleRef" id="947fd2182e86f192"><code class="command">Enemy</code></h3><p>
 Basic Enemy.
     It can hit other enemies and take damage (or can't).
   <br>
-</p><h4 class="titleRef" id="b10c825f92323df9">methods</h4><p>
+</p><h4 class="titleRef" id="bdfc3449c06f23f1">methods</h4><p>
 </p><pre><button class="flex gap-2 items-center text-white"><p>Copy code</p><i class="fas fa-copy"></i></button><code class="language-python">def hit(self, other: 'Enemy') -&gt bool:
 </code></pre><p>
 Hits other enemy
@@ -169,8 +169,17 @@ Hits other enemy
 </code></pre><p>
 Takes damage and recalculate health
 </p><hr><pre><button class="flex gap-2 items-center text-white"><p>Copy code</p><i class="fas fa-copy"></i></button><code class="language-python">def on_hit(self, func):
+</code></pre><p>
+Binds callback function for <code class="command">hit</code> method
+</p><hr><pre><button class="flex gap-2 items-center text-white"><p>Copy code</p><i class="fas fa-copy"></i></button><code class="language-python">def on_take_damage(self, func):
+</code></pre><p>
+Binds callback function when enemy takes any damage
+</p><hr><pre><button class="flex gap-2 items-center text-white"><p>Copy code</p><i class="fas fa-copy"></i></button><code class="language-python">def on_dead(self, func):
+</code></pre><p>
+Binds callback function when enemy is dead
+</p><hr><pre><button class="flex gap-2 items-center text-white"><p>Copy code</p><i class="fas fa-copy"></i></button><code class="language-python">def calculate_damage(self, func):
 </code></pre>
-Bind callback function for <code class="command">hit</code> method
+Binds function for calculating taken damage
 
 
         </div>
@@ -180,22 +189,22 @@ Bind callback function for <code class="command">hit</code> method
             On this page
           </p>
           
-          <a id="pageb6debb4e0085ba72" href="#b6debb4e0085ba72"
+          <a id="pagebc06aa7cb87cb531" href="#bc06aa7cb87cb531"
             class="select-none border-l-[1px] py-0.5 font-semibold pl-[1.0em] opacity-50 hover:opacity-100 dark:border-white border-black border-opacity-100 pl-5 cursor-pointer transition-all duration-200">
             enemy
           </a>
           
-          <a id="page2e74c9a0727d5f7f" href="#2e74c9a0727d5f7f"
+          <a id="page60f0e7b8e4a619e8" href="#60f0e7b8e4a619e8"
             class="select-none border-l-[1px] py-0.5 font-semibold pl-[1.5em] opacity-50 hover:opacity-100 dark:border-white border-black border-opacity-100 pl-5 cursor-pointer transition-all duration-200">
             Classes
           </a>
           
-          <a id="page2ba9488cd12d8094" href="#2ba9488cd12d8094"
+          <a id="page947fd2182e86f192" href="#947fd2182e86f192"
             class="select-none border-l-[1px] py-0.5 font-semibold pl-[2.0em] opacity-50 hover:opacity-100 dark:border-white border-black border-opacity-100 pl-5 cursor-pointer transition-all duration-200">
             <code class="command">Enemy</code>
           </a>
           
-          <a id="pageb10c825f92323df9" href="#b10c825f92323df9"
+          <a id="pagebdfc3449c06f23f1" href="#bdfc3449c06f23f1"
             class="select-none border-l-[1px] py-0.5 font-semibold pl-[2.5em] opacity-50 hover:opacity-100 dark:border-white border-black border-opacity-100 pl-5 cursor-pointer transition-all duration-200">
             methods
           </a>
