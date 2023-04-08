@@ -23,6 +23,7 @@ class Enemy:
         self.defence = defence
         self._on_take_dmg = None
         self._on_hit = None
+        self._on_dead = None
         self._calculate_damage = self._default_calculate_damage
 
     def hit(self, other: 'Enemy') -> bool:
@@ -47,15 +48,41 @@ class Enemy:
         self.current_health -= damage
         if self._on_take_dmg is not None:
             self._on_take_dmg(damage)
+        if self.current_health <= 0 and self._on_dead is not None:
+            self._on_dead()
         return damage
 
     def on_hit(self, func):
         """
-        Bind callback function for `hit` method
+        Binds callback function for `hit` method
 
         :param func: Function with `int` argument.
         """
         self._on_hit = func
+
+    def on_take_damage(self, func):
+        """
+        Binds callback function when enemy takes any damage
+
+        :param func: Function with `int` argument
+        """
+        self._on_take_dmg = func
+
+    def on_dead(self, func):
+        """
+        Binds callback function when enemy is dead
+
+        :param func: Function without arguments
+        """
+        self._on_dead = func
+
+    def calculate_damage(self, func):
+        """
+        Binds function for calculating taken damage
+
+        :param func: Function that takes one `int` argument and returns calculated `int` damage
+        """
+        self._calculate_damage = func
 
     def _default_calculate_damage(self, damage: int) -> int:
         """
