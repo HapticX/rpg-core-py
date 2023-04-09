@@ -184,38 +184,26 @@
       <div class="w-full h-full pt-20 flex px-12 xl:px-32 gap-20">
         <!-- Page data -->
         <div class="flex flex-col gap-4 w-full xl:w-3/4">
-          <h1 class="titleRef" id="6636c3a87e1e8f1f">enemy</h1><p>
+          <h1 class="titleRef" id="64ab0cbb073d955a">item</h1><p>
 
-Provides Enemy class for interact with objects and other enemies
-</p><h2 class="titleRef" id="ce49a0b0af9f44e0">Classes</h2><p>
+Provides Item class behavior
+</p><h2 class="titleRef" id="55fb95dd55d1573a">Classes</h2><p>
 
-</p><h3 class="titleRef" id="0843cd06e02130dd"><code class="command">Enemy</code></h3><p>
-Basic Enemy.
-    It can hit other enemies and take damage (or can't).
+</p><h3 class="titleRef" id="5b89ab353f7533fd"><code class="command">ItemType(IntEnum)</code></h3><p>
+
+</p><h4 class="titleRef" id="d503f5d68c8c4b60">methods</h4><p>
+
+</p><h3 class="titleRef" id="f1d760a75a675f9c"><code class="command">Item</code></h3><p>
+Basic Item class. Describes basic item data.
   <br>
-</p><h4 class="titleRef" id="ebe8b911c9425a97">methods</h4><p>
-</p><pre><button class="flex gap-2 items-center text-white"><p>Copy code</p><i class="fas fa-copy"></i></button><code class="language-python">def hit(self, other: 'Enemy') -&gt bool:
+</p><h4 class="titleRef" id="999805da6532b77f">methods</h4><p>
+</p><pre><button class="flex gap-2 items-center text-white"><p>Copy code</p><i class="fas fa-copy"></i></button><code class="language-python">def use(self):
 </code></pre><p>
-Hits other enemy
-</p><hr><pre><button class="flex gap-2 items-center text-white"><p>Copy code</p><i class="fas fa-copy"></i></button><code class="language-python">def take_damage(self, damage: int) -&gt int:
+Uses this item if item consumable
+</p><hr><pre><button class="flex gap-2 items-center text-white"><p>Copy code</p><i class="fas fa-copy"></i></button><code class="language-python">def on_use(self, func):
 </code></pre><p>
-Takes damage and recalculate health
-</p><hr><pre><button class="flex gap-2 items-center text-white"><p>Copy code</p><i class="fas fa-copy"></i></button><code class="language-python">def on_hit(self, func):
-</code></pre><p>
-Binds callback function for <code class="command">hit</code> method
-</p><ul style="list-style-type: disc"><li><code class="command">func</code> - Function with <code class="command">int</code> argument.</li>
-</ul><hr><pre><button class="flex gap-2 items-center text-white"><p>Copy code</p><i class="fas fa-copy"></i></button><code class="language-python">def on_take_damage(self, func):
-</code></pre><p>
-Binds callback function when enemy takes any damage
-</p><ul style="list-style-type: disc"><li><code class="command">func</code> - Function with <code class="command">int</code> argument</li>
-</ul><hr><pre><button class="flex gap-2 items-center text-white"><p>Copy code</p><i class="fas fa-copy"></i></button><code class="language-python">def on_dead(self, func):
-</code></pre><p>
-Binds callback function when enemy is dead
-</p><ul style="list-style-type: disc"><li><code class="command">func</code> - Function without arguments</li>
-</ul><hr><pre><button class="flex gap-2 items-center text-white"><p>Copy code</p><i class="fas fa-copy"></i></button><code class="language-python">def calculate_damage(self, func):
-</code></pre><p>
-Binds function for calculating taken damage
-</p><ul style="list-style-type: disc"><li><code class="command">func</code> - Function that takes one <code class="command">int</code> argument and returns calculated <code class="command">int</code> damage</li>
+Binds callback for use function
+</p><ul style="list-style-type: disc"><li><code class="command">func</code> - Function without arguments.</li>
 </ul>
         </div>
         <!-- Page navigation (desktop) -->
@@ -224,22 +212,32 @@ Binds function for calculating taken damage
             On this page
           </p>
           
-          <a id="page6636c3a87e1e8f1f" href="#6636c3a87e1e8f1f"
+          <a id="page64ab0cbb073d955a" href="#64ab0cbb073d955a"
             class="select-none border-l-[1px] py-0.5 font-semibold pl-[1.0em] opacity-50 hover:opacity-100 dark:border-white border-black border-opacity-100 pl-5 cursor-pointer transition-all duration-200">
-            enemy
+            item
           </a>
           
-          <a id="pagece49a0b0af9f44e0" href="#ce49a0b0af9f44e0"
+          <a id="page55fb95dd55d1573a" href="#55fb95dd55d1573a"
             class="select-none border-l-[1px] py-0.5 font-semibold pl-[1.5em] opacity-50 hover:opacity-100 dark:border-white border-black border-opacity-100 pl-5 cursor-pointer transition-all duration-200">
             Classes
           </a>
           
-          <a id="page0843cd06e02130dd" href="#0843cd06e02130dd"
+          <a id="page5b89ab353f7533fd" href="#5b89ab353f7533fd"
             class="select-none border-l-[1px] py-0.5 font-semibold pl-[2.0em] opacity-50 hover:opacity-100 dark:border-white border-black border-opacity-100 pl-5 cursor-pointer transition-all duration-200">
-            <code class="command">Enemy</code>
+            <code class="command">ItemType(IntEnum)</code>
           </a>
           
-          <a id="pageebe8b911c9425a97" href="#ebe8b911c9425a97"
+          <a id="paged503f5d68c8c4b60" href="#d503f5d68c8c4b60"
+            class="select-none border-l-[1px] py-0.5 font-semibold pl-[2.5em] opacity-50 hover:opacity-100 dark:border-white border-black border-opacity-100 pl-5 cursor-pointer transition-all duration-200">
+            methods
+          </a>
+          
+          <a id="pagef1d760a75a675f9c" href="#f1d760a75a675f9c"
+            class="select-none border-l-[1px] py-0.5 font-semibold pl-[2.0em] opacity-50 hover:opacity-100 dark:border-white border-black border-opacity-100 pl-5 cursor-pointer transition-all duration-200">
+            <code class="command">Item</code>
+          </a>
+          
+          <a id="page999805da6532b77f" href="#999805da6532b77f"
             class="select-none border-l-[1px] py-0.5 font-semibold pl-[2.5em] opacity-50 hover:opacity-100 dark:border-white border-black border-opacity-100 pl-5 cursor-pointer transition-all duration-200">
             methods
           </a>
@@ -514,8 +512,8 @@ Binds function for calculating taken damage
     }
 
     
-      const href = document.getElementById("/rpg-core-py/rpg_core/enemy.htmlhref");
-      const hrefMobile = document.getElementById("/rpg-core-py/rpg_core/enemy.htmlhrefMobile");
+      const href = document.getElementById("/rpg-core-py/rpg_core/item.htmlhref");
+      const hrefMobile = document.getElementById("/rpg-core-py/rpg_core/item.htmlhrefMobile");
       href.className += " opacity-90 dark:text-accent-color text-light-accent-color";
       hrefMobile.className += " opacity-90 dark:text-accent-color text-light-accent-color";
     
